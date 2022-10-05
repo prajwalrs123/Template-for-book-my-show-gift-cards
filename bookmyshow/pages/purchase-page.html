@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Select Gift Cards</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- CSS and Bootstrap -->
+    <link href="../css/home-and-purchase/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Page title bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed- top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand navbar-icon"
+          ><img src="../assets/misc/bookmyshow-logo.png"
+        /></a>
+        <a class="navbar-brand">Gift Cards</a>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/dashboard.html"
+                >Return to Dashboard</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <input type="checkbox" id="cart-btn" />
+    <a>
+      <label for="cart-btn"></label>
+      <img class="shop-button" src="../assets/icons/Shopping Cart Icon.png" />
+    </a>
+    <div class="page-fade"></div>
+    <!-- Shopping Cart Drawer -->
+    <input type="checkbox" id="cart-btn" />
+    <a>
+      <label for="cart-btn"></label>
+      <img
+        class="shop-button"
+        id="cart-icon"
+        src="../assets/icons/Shopping Cart Icon.png"
+      />
+    </a>
+    <div class="page-fade"></div>
+    <div class="cart-btn">
+      <div class="drawer-content">
+        <div class="drawer-top">
+          <div class="text-button-row">
+            <h1 class="section-heading text-uppercase">Shopping Cart</h1>
+            <a
+              class="btn btn-primary btn-md text-uppercase"
+              id="checkout-button"
+              >Checkout
+            </a>
+          </div>
+          <div>
+            <h3 class="section-heading" id="cart-total">Total: ₹0</h3>
+          </div>
+        </div>
+        <span>
+          <div id="shopping-cart-list" class="cart-items"></div>
+        </span>
+      </div>
+    </div>
+    <!-- Page Description -->
+    <section class="page-section justify-content-center">
+      <div class="container">
+        <div class="text-center">
+          <h3 class="section-subheading text-muted">
+            Here is a list of the current types of gift cards we have available
+            <br />for our BookMyShow&trade; customers. If you'd like to view the
+            items you currently have<br />
+            placed in your cart, please select the shopping cart icon on the
+            top-left corner. <br /><br />We hope you enjoy!
+          </h3>
+        </div>
+      </div>
+    </section>
+    <!-- ₹300 INR Card -->
+    <section class="page-section bg-light justify-content-center">
+      <div class="container border-info">
+        <div class="text-center">
+          <a>
+            <img src="../assets/cards/300 INR Card.png" class="gift-card" />
+          </a>
+          <h3 class="section-subheading text-muted">
+            ₹300 BookMyShow&trade; Gift Card
+          </h3>
+          <a
+            class="btn btn-primary btn-xl text-uppercase"
+            data-bs-toggle="modal"
+            href="#purchaseModal"
+            id="300-modal-button"
+            >Buy This Card
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ₹500 INR Card -->
+    <section class="page-section justify-content-center">
+      <div class="container">
+        <div class="text-center">
+          <a>
+            <img src="../assets/cards/500 INR Card.png" class="gift-card" />
+          </a>
+          <h3 class="section-subheading text-muted">
+            ₹500 BookMyShow&trade; Gift Card
+          </h3>
+          <a
+            class="btn btn-primary btn-xl text-uppercase"
+            data-bs-toggle="modal"
+            href="#purchaseModal"
+            id="500-modal-button"
+            >Buy This Card</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- ₹700 INR Card -->
+    <section class="page-section bg-light justify-content-center">
+      <div class="container">
+        <div class="text-center">
+          <a>
+            <img src="../assets/cards/700 INR Card.png" class="gift-card" />
+          </a>
+          <h3 class="section-subheading text-muted">
+            ₹700 BookMyShow&trade; Gift Card
+          </h3>
+          <a
+            class="btn btn-primary btn-xl text-uppercase"
+            data-bs-toggle="modal"
+            href="#purchaseModal"
+            id="700-modal-button"
+            >Buy This Card</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer py-4">
+      <div class="container">
+        <div class="align-items-center">
+          <div>Copyright &copy; Boss Bunch 2022</div>
+        </div>
+      </div>
+    </footer>
+    <!-- Gift Card Modal -->
+    <div
+      class="purchase-modal modal fade"
+      id="purchaseModal"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-bs-dismiss="modal">
+            <img
+              src="../assets/icons/close-icon.svg"
+              width="25px"
+              height="25px"
+            />
+          </div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="modal-head">
+                  <h3 class="text-uppercase text-center">Purchase Card</h3>
+                </div>
+                <div class="modal-body">
+                  <img
+                    class="img-fluid d-block mx-auto"
+                    id="modal-product-image"
+                  />
+                  <p id="modal-product-title"></p>
+                  <ul class="list-inline">
+                    <li>
+                      <strong>How many would you like?</strong>
+                    </li>
+                    <div class="center">
+                      <div class="input-group">
+                        <span>
+                          <button
+                            type="button"
+                            class="btn btn-danger btn-number"
+                            data-type="minus"
+                            data-field="cardAmt1"
+                            style="width: 50px; height: 40px"
+                          >
+                            <img
+                              src="../assets/icons/minus.svg"
+                              width="25"
+                              height="25"
+                            />
+                          </button>
+                        </span>
+                        <input
+                          id="gift-card-quantity"
+                          class="form-control input-number"
+                          type="text"
+                          name="cardAmt1"
+                          value="1"
+                          min="1"
+                          max="100"
+                          style="text-align: center"
+                        />
+                        <span>
+                          <button
+                            type="button"
+                            class="btn btn-success btn-number"
+                            data-type="plus"
+                            data-field="cardAmt1"
+                            style="width: 50px; height: 40px"
+                          >
+                            <img
+                              src="../assets/icons/plus.svg"
+                              width="25"
+                              height="25"
+                            />
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </ul>
+                  <button
+                    class="btn btn-primary btn-xl text-uppercase"
+                    data-bs-dismiss="modal"
+                    type="button"
+                    id="modal-add-to-cart"
+                  >
+                    <i class="fas fa-xmark me-1"></i>
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Scripts for the page -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMS-Login</title>
+
+    <!-- Bootstrap 5 CDN-Import: -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Light-Theming: -->
+    <link id="mainStyle" rel="stylesheet" href="../css/login/style.css" />
+
+    <!-- Dark-Theming: -->
+    <!-- Uncomment the line below to use dark theming. Don't forget to comment the line above.-->
+    <!-- <link rel="stylesheet" href="../css/login/style_dark.css"> -->
+    <!-- this also works automatically by clicking the theme_button. -->
+  </head>
+  <body>
+    <div class="page-content d-flex align-items-center">
+      <div class="container d-flex justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-6 col-xxl-5">
+          <div class="auth-card">
+            <div class="logo-area">
+              <!-- Light-Theming Logo: -->
+              <img
+                id="header_logo"
+                class="logo"
+                src="../assets/login/logo.png"
+              />
+
+              <!-- Dark-Theming: -->
+              <!-- <img class="logo" src="../assets/login/logo_dark.png" /> -->
+            </div>
+
+            <h5 class="auth-title">Login</h5>
+
+            <button class="btn service-btn mt-5 mb-3">
+              <i class="fab fa-google service-icon"></i>
+              Login with Google
+            </button>
+
+            <hr class="separator" />
+
+            <!-- Login-Form-->
+            <form id="login-form">
+              <div class="mb-2 mt-5">
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control auth-input"
+                  placeholder="Enter e-mail Address"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <input
+                  type="password"
+                  id="password"
+                  class="form-control auth-input"
+                  placeholder="Enter Password"
+                  required
+                />
+              </div>
+
+              <button
+                class="btn auth-btn mt-2 mb-4"
+                onclick="loginWithCredentials()"
+                href="./dashboard.html"
+              >
+                Login
+              </button>
+            </form>
+
+            <p class="text mb-1">
+              <a href="" class="text-link">Forgot Password?</a>
+            </p>
+            <p class="text mb-4">
+              Don't have Account?
+              <a href="./signup.html" class="text-link">Create Account</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button id="theme_button" class="btn btn-theme" onclick="onThemeChange()">
+      <i id="theme_icon" class="fas fa-moon"></i>
+    </button>
+
+    <script type="text/javascript">
+      function onThemeChange() {
+        let cssStyleSheet = document.getElementById("mainStyle");
+        let path = cssStyleSheet.href.substring(
+          cssStyleSheet.href.length - 9,
+          cssStyleSheet.href.length
+        );
+        if (path === "style.css") {
+          cssStyleSheet.href = "../css/login/style_dark.css";
+          document.getElementById("header_logo").src =
+            "../assets/login/logo_dark.png";
+          document.getElementById("theme_icon").className = "fas fa-sun";
+        } else {
+          cssStyleSheet.href = "../css/login/style.css";
+          document.getElementById("header_logo").src =
+            "../assets/login/logo.png";
+          document.getElementById("theme_icon").className = "fas fa-moon";
+        }
+      }
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.0.0/firebaseui.js"></script>
+    <script src="../js/scripts.js" async></script>
+    <script id="firebase-auth-js-after">
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDrBvCm_2OodU39pj-jFrgnu1Tekcz1ZiY",
+        authDomain: "bookmyshowgiftcardservice.firebaseapp.com",
+        databaseURL:
+          "https://bookmyshowgiftcardservice-default-rtdb.asia-southeast1.firebasedatabase.app/",
+        projectId: "bookmyshowgiftcardservice",
+        storageBucket: "bookmyshowgiftcardservice.appspot.com",
+        messagingSenderId: "240242857859",
+        appId: "1:240242857859:web:46989a4675d292bd7d48b6",
+        measurementId: "G-WGH0X1GWQZ",
+      };
+
+      // Initialize Firebase
+      const app = firebase.initializeApp(firebaseConfig);
+      firebase.auth().languageCode = "en_US";
+    </script>
+  </body>
+</html>
